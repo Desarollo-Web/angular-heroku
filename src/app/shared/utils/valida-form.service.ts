@@ -16,11 +16,14 @@ export class ValidaFormService {
     let flag = false;
 
     if (form != null) {
-      flag = (form.touched || form.dirty) && !form.valid
+      flag = form.touched || form.dirty && !form.valid
     }
     return flag;
   }
 
+  /*
+    Método que traduce el error predefinido en inglés a español
+  */
   getErrorMessage(form:AbstractControl|null) {
     let mensaje = '';
 

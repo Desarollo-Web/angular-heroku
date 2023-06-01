@@ -1,4 +1,4 @@
-<mat-grid-list cols="1" rowHeight="100%" class="fondo">
+<mat-grid-list cols="1" rowHeight="100%" class="fondo, primary">
     <mat-grid-tile>
         <mat-card [class.mat-elevation-z8]="true">
             <mat-card-content>
@@ -6,9 +6,9 @@
                 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Usuario</mat-label>
-                        <input matInput placeholder="Usuario" formControlName="Username">
+                        <input matInput placeholder="Usuario" formControlName="username">
                         <mat-error *ngIf="validaForm.isValidField(loginForm.get('username'))">
-                            {{  validaForm.getErrorMessage(loginForm.get('username'))}}
+                            {{ validaForm.getErrorMessage(loginForm.get('username'))}}
                         </mat-error>
                     </mat-form-field>
 
@@ -19,8 +19,16 @@
                             {{validaForm.getErrorMessage(loginForm.get('password'))}}
                         </mat-error>
                     </mat-form-field>
-                    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Ingresar</button>
+
+
+                    <button type="submit" mat-raised-button color="primary"
+                        [disabled]="!loginForm.valid">Ingresar</button>
+                    <div *ngIf="tokenVisible"> reCAPTCHA Token <br />
+                        <p style="color: 
+                    red">{{reCAPTCHAToken}}</p>
+                    </div>
                 </form>
+
             </mat-card-content>
         </mat-card>
     </mat-grid-tile>
