@@ -5,13 +5,15 @@ import { MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule} from '@angular/material/input';
 import { MatGridListModule} from '@angular/material/grid-list'
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 
 const modulos: any = [
   MatButtonModule,
   MatCardModule,
   MatIconModule,
   MatInputModule,
-  MatGridListModule
+  MatGridListModule,
+  MatPasswordStrengthModule 
 ]
 
 @NgModule({
