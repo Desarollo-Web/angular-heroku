@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ValidaFormService } from 'src/app/shared/utils/valida-form.service';
 import { Router } from '@angular/router';
-
-import { NgForm } from '@angular/forms';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
-
 
 @Component({
   selector: 'app-login',
@@ -37,7 +34,4 @@ export class LoginComponent implements OnInit {
   });
     //this.route.navigate(['home']);
   }
-
-
-
 }
