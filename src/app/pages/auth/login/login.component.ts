@@ -12,7 +12,7 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
 export class LoginComponent implements OnInit {
 
   loginForm: any;
-  tokenVisible: boolean = true;
+  tokenVisible: boolean = false;
   reCAPTCHAToken: string = "";
 
   constructor(private fb: FormBuilder, public validaForm: ValidaFormService, public route: Router,
@@ -32,6 +32,6 @@ export class LoginComponent implements OnInit {
       this.tokenVisible = true;
       this.reCAPTCHAToken = `Token [${token}] generated`;
   });
-    //this.route.navigate(['home']);
+    this.route.navigate(['home']);
   }
 }
